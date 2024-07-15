@@ -9,6 +9,8 @@ backbone. The dataset consists of images captured from a front-facing camera mou
 The KITTI Dataset is used which consists of object detection and object orientation estimation benchmark consists of 7481 training images and 7518 test images, comprising a total of
 80.256 labeled objects.
 
+The google drive link to the datasets and the 'ModelFile'.pth: [Resources Link](https://bit.ly/3S7Wog6 )
+
 *Loading and Exploring the Dataset*
 The dataset was loaded from a specified directory on Google Drive, consisting of images and corresponding annotations. The images are in RGB format, and the annotations provide bounding
 box coordinates and class labels for the objects present in each image.
@@ -25,3 +27,51 @@ I performed the feature extraction in the available datasets labels and used onl
 An initial exploration of the dataset revealed the distribution of object classes. The dataset contains the following classes: Pedestrian, Car, Van, Truck, Traffic Sign, Cyclist etc.
 comprising of the 8 different classes and +1 for background class.
 Previously, the COCO dataset has 91 classes and later on the model is finetuned to have 8 different classes as per the requirement mentioned by the qualification task.
+
+*Preprocessing Steps*
+To prepare the dataset for training, initially, the Image resizing and Normalization preprocessing techniques were applied but later on the output of the model seems to be better without the resizing and normalization functions. Thus, no any preprocessing techniques needed to be applied as the datasets are already in the appropriate format.
+
+**Model Development**
+Choosing a Pre-trained CNN Architecture
+For this project, the Faster R-CNN model with a ResNet-50 backbone was selected and PyTorch Framework of ML is implemented to build the model. Faster R-CNN is a popular object detection model that combines a region proposal network (RPN) with a Fast R-CNN detector.
+There are also other state-of-the-art models like YOLO_Vx available but I choose to implement this model for making the training process computationally efficient.
+The model architecture is presented below:
+![Faster-RCNN_ResNet_50_Architecture](https://github.com/user-attachments/assets/cc22413e-8c29-4dd4-b58f-a5d58d0d7bca)
+
+*Fine-Tuning the Model*
+The pre-trained ResNet-50 model was fine-tuned on the given dataset. The following modifications were made:
+
+*Output Layer Adjustment*: The final fully connected layer i.e. the output layer is adjusted to predict bounding boxes and class probabilities for the specific object classes in the dataset and adjusted to predicted the objects according to the KITTI datasets.
+The GOOGLE-COLAB is used as the text-editor as it provides free GPU computational resources.
+
+
+**Evaluation**
+Performance Evaluation
+The model's performance was evaluated on the testing set using the following metrics:
+The results are as follows:
+![Model's Performance](https://github.com/user-attachments/assets/344a30f1-318a-4008-8451-0f63978cd0d8)
+This is the performance metrices values of the model, furthermore the accuracy along with other metrices is improved.
+
+**Visualization**
+*Model Predictions*
+The model's predictions were visualized on a few sample images from the testing set. The visualizations include bounding boxes and class labels with confidence scores. Below are some examples:
+![input1](https://github.com/user-attachments/assets/1618d06d-abda-445f-954a-d60c78a07591)
+![output1](https://github.com/user-attachments/assets/d359cfb3-986c-4345-97bf-01cfa0b8d0b1)
+![input2](https://github.com/user-attachments/assets/546afeb8-43e0-4533-8489-8451478993c2)
+![output2](https://github.com/user-attachments/assets/7a972efd-94e5-4d7a-9dd4-2d9cb25e8354)
+
+
+**Optimization**
+*Strategies for Improvement*
+To further optimize the model's performance, the following strategies are used and suggested:
+
+*Hyperparameter Tuning:* Experiment with different learning rates, batch sizes, and number of epochs to find the optimal settings.
+*Model Architecture Adjustments:* Consider using more advanced architectures like Efficient-Det or YOLOv5 for potentially better performance.
+This project successfully developed an object detection model for self-driving cars using a pre-trained Faster R-CNN with a ResNet-50 backbone. The model was fine-tuned on a dataset of front-facing car images, achieving a good F1 score on the testing set. Overall, this model is performing really well and predicting the class name labels and bounding boxes accurately and within the appropriate image object boundary. 
+
+*Potential Areas for Improvement*
+•	Data Augmentation: Increasing the variety and complexity of data augmentation techniques.
+•	Hyperparameter Optimization: Conducting a more thorough hyperparameter search.
+•	Advanced Architectures: Exploring more advanced detection models like Efficient-Det and YOLOv5.
+
+
