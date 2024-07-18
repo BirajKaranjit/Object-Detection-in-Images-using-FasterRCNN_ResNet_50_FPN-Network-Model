@@ -54,16 +54,15 @@ This is the performance metrices values of the model, furthermore the accuracy a
 
 **Visualization**
 *Model Predictions*
-The model's predictions were visualized on a few sample images from the testing set. The visualizations include bounding boxes and class labels with confidence scores. Below are some examples:
-![input1](https://github.com/user-attachments/assets/1618d06d-abda-445f-954a-d60c78a07591)
-![output1](https://github.com/user-attachments/assets/d359cfb3-986c-4345-97bf-01cfa0b8d0b1)
+The model's predictions were visualized on a few sample of local images from the testing set. The visualizations include bounding boxes and class labels with confidence scores. Below are some examples:
+
 ![ringroad](https://github.com/user-attachments/assets/e18c7f1c-ee94-4f12-bc53-9b726a6b231b)
-![Uploading ringroad_result_img.png…]()
+![ringroad_result_img](https://github.com/user-attachments/assets/cff53987-08c2-417d-8ed0-0891db301f4e)
+![ktm](https://github.com/user-attachments/assets/c46521e7-42cb-435a-8142-eb0c5d5fa5cc)
+![ktm_result_img](https://github.com/user-attachments/assets/1cfb93fc-e1a1-45ab-b5b9-8eace7bdc1d9)
+
 ![LocalSample](https://github.com/user-attachments/assets/27e45093-a3d6-492e-b63a-956d5fc98a71)
 ![result_image_2](https://github.com/user-attachments/assets/15ad8b0b-d255-495c-b199-8efd28bc9fbb)
-![input2](https://github.com/user-attachments/assets/546afeb8-43e0-4533-8489-8451478993c2)
-![output2](https://github.com/user-attachments/assets/7a972efd-94e5-4d7a-9dd4-2d9cb25e8354)
-
 
 **Optimization**
 *Strategies for Improvement*
